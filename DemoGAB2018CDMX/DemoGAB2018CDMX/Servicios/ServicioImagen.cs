@@ -17,12 +17,12 @@ namespace DemoGAB2018CDMX.Servicios
 
                 if (CrossMedia.Current.IsCameraAvailable || CrossMedia.Current.IsTakePhotoSupported)
                 {
-                    foto = await CrossMedia.Current.PickPhotoAsync();
-                    //foto = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                    //{
-                    //    Directory = "Pictures",
-                    //    Name = "emotion.jpg"
-                    //});
+                    //foto = await CrossMedia.Current.PickPhotoAsync();
+                    foto = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        Directory = "Pictures",
+                        Name = "emotion.jpg"
+                    });
                 }
             }
             catch (Exception ex)
