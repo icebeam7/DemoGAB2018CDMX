@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.Media.Abstractions;
@@ -65,7 +65,10 @@ namespace DemoGAB2018CDMX.Paginas
             try
             {
                 Loading(true);
-                emocion = await ServicioFace.ObtenerEmocion(foto);
+                var emocion = await ServicioFace.ObtenerEmocion(foto);
+                this.emocion.Foto = emocion.Foto;
+                this.emocion.Nombre = emocion.Nombre;
+                this.emocion.Score = emocion.Score;
                 lblEmocion.Text = emocion.Resultado;
             }
             catch (Exception ex)
