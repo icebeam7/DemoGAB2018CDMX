@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoGAB2018CDMX.Paginas.PaginaListaTareas">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <ActivityIndicator x:Name="indicator" Color="Green" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <Label Text="Lista de Tareas" TextColor="Black" FontSize="Large" Margin="15"/>
+
+            <ScrollView Margin="20">
+                <ListView x:Name="lsvTareas" ItemSelected="lsvTareas_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Nombre}" TextColor="Black" 
+                                      Detail="{Binding Name}" DetailColor="LightGray"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnAgregar" Text="Agregar" Order="Primary" Priority="0" Clicked="btnAgregar_Clicked"/>
+        <ToolbarItem x:Name="btnRating" Text="Rating" Order="Primary" Priority="0" Clicked="btnRating_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>
