@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -133,6 +133,7 @@ namespace DemoGAB2018CDMX.Servicios
             }
             catch (Exception e)
             {
+                var msg = e.Message;
                 return false;
             }
         }
